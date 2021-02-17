@@ -51,20 +51,102 @@ namespace LAB22
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string one = "";
-            if(radioButton1.Checked)
+            try
             {
-                one = radioButton1.Text;
+                char[] forname = Firstname.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsLetter(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+
+                forname = _Name.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsLetter(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                forname = Secondname.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsLetter(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                forname = City.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsLetter(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                forname = Street.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsLetter(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                forname = Age.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsDigit(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                forname = Ball.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsDigit(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                forname = Build.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsDigit(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                forname = Flat.Text.ToCharArray();
+                foreach (char i in forname)
+                {
+                    if (Char.IsDigit(i) == false)
+                    {
+                        throw new Exception();
+                    }
+                }
+                string one = "";
+                if (radioButton1.Checked)
+                {
+                    one = radioButton1.Text;
+                }
+                if (radioButton2.Checked)
+                {
+                    one = radioButton2.Text;
+                }
+
+                Student first = new Student(Firstname.Text, _Name.Text, Secondname.Text, Age.Text, comboBox1.Text, Course.Value, one, dateTimePicker1.Text, Group.Value, Ball.Text, City.Text, Street.Text, Build.Text, Flat.Text);
+                ListViewItem LVI = new ListViewItem(first.firstname);
+                LVI.Tag = first;
+                listView1.Items.Add(LVI);
+                ClearInput();
             }
-            if (radioButton2.Checked)
+            catch (Exception)
             {
-                one = radioButton2.Text;
+                MessageBox.Show("Проверьте корректность введенных полей");
+                
             }
-            Student first = new Student(Firstname.Text,_Name.Text,Secondname.Text,Age.Text, comboBox1.Text,Course.Value,one, dateTimePicker1.Text, Group.Value,Ball.Text,City.Text,Street.Text,Build.Text,Flat.Text);
-            ListViewItem LVI = new ListViewItem(first.firstname);
-            LVI.Tag = first;
-            listView1.Items.Add(LVI);
-            ClearInput();
             
         }
 
@@ -164,6 +246,11 @@ namespace LAB22
             ListViewItem LVI = new ListViewItem(first.firstname);
             LVI.Tag = first;
             listView1.Items.Add(LVI);
+        }
+
+        private void Firstname_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

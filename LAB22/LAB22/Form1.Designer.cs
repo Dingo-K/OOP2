@@ -61,9 +61,9 @@
             this._Name = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.Group)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Course)).BeginInit();
             this.panel1.SuspendLayout();
@@ -242,9 +242,9 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "",
             "ПОИТ",
             "ПОИБМС",
             "ДЭВИ",
@@ -334,6 +334,7 @@
             this.Firstname.Name = "Firstname";
             this.Firstname.Size = new System.Drawing.Size(189, 28);
             this.Firstname.TabIndex = 34;
+            this.Firstname.TextChanged += new System.EventHandler(this.Firstname_TextChanged);
             // 
             // label1
             // 
@@ -381,16 +382,15 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 69;
             // 
-            // radioButton1
+            // label8
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 26);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(88, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Мужчина";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label8.Location = new System.Drawing.Point(3, 5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 18);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "Пол";
             // 
             // radioButton2
             // 
@@ -403,15 +403,16 @@
             this.radioButton2.Text = "Женщина";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // radioButton1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label8.Location = new System.Drawing.Point(3, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 18);
-            this.label8.TabIndex = 70;
-            this.label8.Text = "Пол";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 26);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(88, 21);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Мужчина";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
