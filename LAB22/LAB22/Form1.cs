@@ -126,6 +126,17 @@ namespace LAB22
                         throw new Exception();
                     }
                 }
+                int _age;
+                _age = int.Parse(Ball.Text);
+                if (_age < 0 || _age > 10)
+                {
+                    throw new Exception();
+                }
+                _age = int.Parse(Age.Text);
+                if (_age <= 0 || _age > 150)
+                {
+                    throw new Exception();
+                }
                 string one = "";
                 if (radioButton1.Checked)
                 {
