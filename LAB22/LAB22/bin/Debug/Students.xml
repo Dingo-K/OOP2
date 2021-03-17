@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <studentlist>
+    <Student>
+      <name>Денис</name>
+      <firstname>Кульш</firstname>
+      <secondname>Александрович</secondname>
+      <special>ПОИТ</special>
+      <course>4</course>
+      <gender>Мужчина</gender>
+      <time>17 марта 2021 г.</time>
+      <group>6</group>
+      <ball>6</ball>
+      <city>Минск</city>
+      <street>РОК</street>
+      <build>23</build>
+      <flat>123</flat>
+    </Student>
+    <Student>
+      <name>Владислав</name>
+      <firstname>Кононович</firstname>
+      <secondname>Михай</secondname>
+      <special>ПОИТ</special>
+      <course>1</course>
+      <gender>Женщина</gender>
+      <time>17 марта 2021 г.</time>
+      <group>6</group>
+      <ball>5</ball>
+      <city>фцв</city>
+      <street>фцв</street>
+      <build>23</build>
+      <flat>45</flat>
+    </Student>
+  </studentlist>
+</Students>

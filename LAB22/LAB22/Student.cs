@@ -12,13 +12,12 @@ namespace LAB22
         public string name;
         public string firstname;
         public string secondname;
-        public string age;
         public string special;
         public int course;
         public string gender;
         public string time;
         public int group;
-        public string ball;
+        public double ball;
         public string city;
         public string street;
         public string build;
@@ -28,12 +27,11 @@ namespace LAB22
 
         }
         
-        public Student(string name, string firstname, string secondname, string age, string special, int course, string gender, string time, int group, string ball, string city, string street, string build, string flat)
+        public Student(string firstname, string name, string secondname, string special, int course, string gender, string time, int group, double ball, string city, string street, string build, string flat)
         {
             this.name = name;
             this.firstname = firstname;
             this.secondname = secondname;
-            this.age = age;
             this.course = course;
             this.special = special;
             this.gender = gender;

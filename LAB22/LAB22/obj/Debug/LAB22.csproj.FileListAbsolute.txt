@@ -8,3 +8,5 @@ D:\OOP\2Sem\LAB22\LAB22\bin\Debug\LAB22.exe
 D:\OOP\2Sem\LAB22\LAB22\bin\Debug\LAB22.pdb
 D:\OOP\2Sem\LAB22\LAB22\obj\Debug\LAB22.exe
 D:\OOP\2Sem\LAB22\LAB22\obj\Debug\LAB22.pdb
+D:\OOP\2Sem\LAB22\LAB22\obj\Debug\LAB22.Form2.resources
+D:\OOP\2Sem\LAB22\LAB22\obj\Debug\LAB22.Form3.resources

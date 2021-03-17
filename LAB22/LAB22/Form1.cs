@@ -19,6 +19,7 @@ namespace LAB22
             InitializeComponent();
             Course.Scroll += trackBar1_Scroll;
             Group.Scroll += trackBar2_Scroll;
+            
         }
 
         private void ClearInput()
@@ -26,7 +27,6 @@ namespace LAB22
             Firstname.Clear();
             _Name.Clear();
             Secondname.Clear();
-            Age.Clear();
             comboBox1.SelectedIndex = 0;
             Ball.Clear();
             City.Clear();
@@ -39,6 +39,28 @@ namespace LAB22
             radioButton2.Checked = false;
             label16.Text = "1";
             label15.Text = "1";
+        }
+        private void SortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();
+            newForm.Show();
+        }
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Кульш Денис Александрович\n"+"Version: 1.0.0");
+        }
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems != null)
+            {
+                ListViewItem lvi = listView1.SelectedItems[0];
+                listView1.Items.Remove(lvi);
+            }
+        }
+        private void FindToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 newForm = new Form3();
+            newForm.Show();
         }
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
@@ -53,12 +75,21 @@ namespace LAB22
         {
             try
             {
+                double _ball = Convert.ToDouble(Ball.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Проверьте корректность балла");
+            }
+            try
+            {
                 char[] forname = Firstname.Text.ToCharArray();
+                double _ball = Convert.ToDouble(Ball.Text);
                 foreach (char i in forname)
                 {
                     if (Char.IsLetter(i) == false)
                     {
-                        throw new Exception();
+                        throw new Exception("Фамилия");
                     }
                 }
 
@@ -67,7 +98,7 @@ namespace LAB22
                 {
                     if (Char.IsLetter(i) == false)
                     {
-                        throw new Exception();
+                        throw new Exception("Имя");
                     }
                 }
                 forname = Secondname.Text.ToCharArray();
@@ -75,7 +106,7 @@ namespace LAB22
                 {
                     if (Char.IsLetter(i) == false)
                     {
-                        throw new Exception();
+                        throw new Exception("Отчество");
                     }
                 }
                 forname = City.Text.ToCharArray();
@@ -83,7 +114,7 @@ namespace LAB22
                 {
                     if (Char.IsLetter(i) == false)
                     {
-                        throw new Exception();
+                        throw new Exception("Город");
                     }
                 }
                 forname = Street.Text.ToCharArray();
@@ -91,51 +122,59 @@ namespace LAB22
                 {
                     if (Char.IsLetter(i) == false)
                     {
-                        throw new Exception();
+                        throw new Exception("Улица");
                     }
                 }
-                forname = Age.Text.ToCharArray();
-                foreach (char i in forname)
-                {
-                    if (Char.IsDigit(i) == false)
-                    {
-                        throw new Exception();
-                    }
-                }
-                forname = Ball.Text.ToCharArray();
-                foreach (char i in forname)
-                {
-                    if (Char.IsDigit(i) == false)
-                    {
-                        throw new Exception();
-                    }
-                }
+                
+                
                 forname = Build.Text.ToCharArray();
+                char t = '/';
+                int a = 0;
+                int b = 0;
                 foreach (char i in forname)
                 {
+                    if (b == 0)
+                    {
+                        if (i == t)
+                        {
+                            throw new Exception("Дом");
+                        }
+                    }
+                    if (i == t)
+                    {
+                        
+                        if(a>0)
+                        {
+                            throw new Exception("Дом");
+                        }
+                        a++;
+                        continue;
+                    }
                     if (Char.IsDigit(i) == false)
                     {
-                        throw new Exception();
+                        
+                        throw new Exception("Дом");
                     }
+                    b++;
                 }
                 forname = Flat.Text.ToCharArray();
                 foreach (char i in forname)
                 {
                     if (Char.IsDigit(i) == false)
                     {
-                        throw new Exception();
+                        throw new Exception("Квартира");
                     }
                 }
                 int _age;
-                _age = int.Parse(Ball.Text);
-                if (_age < 0 || _age > 10)
+                double ball = Convert.ToDouble(Ball.Text);
+                if(ball < 0)
                 {
-                    throw new Exception();
+                    throw new Exception("Балл");
                 }
-                _age = int.Parse(Age.Text);
-                if (_age <= 0 || _age > 150)
+                _age = int.Parse(Flat.Text);
+                if (_age <= 0)
                 {
-                    throw new Exception();
+                    throw new Exception("Неверно указана квартира");
                 }
                 string one = "";
                 if (radioButton1.Checked)
@@ -147,17 +186,18 @@ namespace LAB22
                     one = radioButton2.Text;
                 }
 
-                Student first = new Student(Firstname.Text, _Name.Text, Secondname.Text, Age.Text, comboBox1.Text, Course.Value, one, dateTimePicker1.Text, Group.Value, Ball.Text, City.Text, Street.Text, Build.Text, Flat.Text);
+                Student first = new Student(Firstname.Text, _Name.Text, Secondname.Text,comboBox1.Text, Course.Value, one, dateTimePicker1.Text, Group.Value,_ball , City.Text, Street.Text, Build.Text, Flat.Text);
                 ListViewItem LVI = new ListViewItem(first.firstname);
                 LVI.Tag = first;
                 listView1.Items.Add(LVI);
                 ClearInput();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Проверьте корректность введенных полей");
+                MessageBox.Show($"Проверьте корректность {ex.Message}");
                 
             }
+            
             
         }
 
@@ -179,15 +219,15 @@ namespace LAB22
 
                 if(first != null)
                 {
+                    
                     Firstname.Text = first.firstname;
                     _Name.Text = first.name;
                     Secondname.Text = first.secondname;
-                    Age.Text = first.age;
                     comboBox1.Text = first.special;
                     Course.Value = first.course;
                     dateTimePicker1.Text = first.time;
                     Group.Value = first.group;
-                    Ball.Text = first.ball;
+                    Ball.Text =Convert.ToString(first.ball);
                     City.Text = first.city;
                     Street.Text = first.street;
                     Build.Text = first.build;
@@ -233,19 +273,22 @@ namespace LAB22
         }
         private Students XMLDeSerialize()
         {
-            XmlSerializer xml = new XmlSerializer(typeof(Students));
+            
+                XmlSerializer xml = new XmlSerializer(typeof(Students));
 
-            using (FileStream fs = new FileStream("Students.xml", FileMode.OpenOrCreate))
-            {
-                Students students = (Students)xml.Deserialize(fs);
-                return students;
-            }
+                using (FileStream fs = new FileStream("Students.xml", FileMode.OpenOrCreate))
+                {
+                    Students students = (Students)xml.Deserialize(fs);
+                    return students;
+                }
+            
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Students students = XMLDeSerialize();
-
+            
             foreach(Student student in students.studentlist)
             {
                 Add(student);
@@ -263,5 +306,12 @@ namespace LAB22
         {
             
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.MaxDate = DateTime.Now;
+
+        }
+
     }
 }
