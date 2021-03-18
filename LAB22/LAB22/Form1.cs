@@ -19,7 +19,14 @@ namespace LAB22
             InitializeComponent();
             Course.Scroll += trackBar1_Scroll;
             Group.Scroll += trackBar2_Scroll;
-            
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            timer.Enabled = true;
+            timer.Tick += new EventHandler(timer_tick);
+        }
+        private void timer_tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
         }
 
         private void ClearInput()
@@ -167,10 +174,6 @@ namespace LAB22
                 }
                 int _age;
                 double ball = Convert.ToDouble(Ball.Text);
-                if(ball < 0)
-                {
-                    throw new Exception("Балл");
-                }
                 _age = int.Parse(Flat.Text);
                 if (_age <= 0)
                 {

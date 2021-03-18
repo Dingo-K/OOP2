@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace LAB22
     public class Student
     {
         public string name;
+        [Required(ErrorMessage = "Фамилия не установлена")]
         public string firstname;
         public string secondname;
         public string special;
@@ -17,10 +19,12 @@ namespace LAB22
         public string gender;
         public string time;
         public int group;
+        [Range(0, 100, ErrorMessage = "Недопустимый балл")]
         public double ball;
         public string city;
         public string street;
         public string build;
+        [Valid]
         public string flat;
         public Student()
         {
@@ -55,5 +59,23 @@ namespace LAB22
         }
 
         
+    }
+
+    public class Valid : ValidationAttribute
+    {
+        public override bool IsValid(object value)
+        {
+            if (value != null)
+            {
+                string userName = value.ToString();
+                if (userName == "0")
+                {
+                    this.ErrorMessage = "Не существует квартира 0";
+                }
+                else
+                    return true;
+            }
+            return false;
+        }
     }
 }

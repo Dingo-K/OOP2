@@ -59,6 +59,7 @@ namespace LAB22
 
         private void button2_Click(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
             Students students = XMLDeSerialize();
             foreach (Student student in students.studentlist)
             {

@@ -60,6 +60,7 @@ namespace LAB22
             this.Build = new System.Windows.Forms.Label();
             this.Flat = new System.Windows.Forms.Label();
             this.Special = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Label1
@@ -96,7 +97,7 @@ namespace LAB22
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(86, 225);
+            this.label2.Location = new System.Drawing.Point(67, 273);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(282, 17);
             this.label2.TabIndex = 75;
@@ -332,11 +333,22 @@ namespace LAB22
             this.Special.Size = new System.Drawing.Size(0, 17);
             this.Special.TabIndex = 102;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(39, 227);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(379, 43);
+            this.button2.TabIndex = 103;
+            this.button2.Text = "Сохранить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 299);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.Special);
             this.Controls.Add(this.Flat);
             this.Controls.Add(this.Build);
@@ -407,5 +419,6 @@ namespace LAB22
         private System.Windows.Forms.Label Build;
         private System.Windows.Forms.Label Flat;
         private System.Windows.Forms.Label Special;
+        private System.Windows.Forms.Button button2;
     }
 }

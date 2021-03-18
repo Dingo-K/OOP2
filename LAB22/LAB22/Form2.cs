@@ -94,6 +94,7 @@ namespace LAB22
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
             Students students = XMLDeSerialize();
             var sortedstudents = from u in students.studentlist
                                  orderby u.firstname
@@ -102,6 +103,27 @@ namespace LAB22
             {
                 Add(student);
             }
+        }
+        private void XMLSerialize(Students students)
+        {
+            XmlSerializer xml = new XmlSerializer(typeof(Students));
+
+            using (FileStream fs = new FileStream("StudentsSort.xml", FileMode.OpenOrCreate))
+            {
+                xml.Serialize(fs, students);
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Students students = new Students();
+            foreach (ListViewItem item in listView1.Items)
+            {
+                if (item.Tag != null)
+                {
+                    students.studentlist.Add((Student)item.Tag);
+                }
+            }
+            XMLSerialize(students);
         }
     }
 }
