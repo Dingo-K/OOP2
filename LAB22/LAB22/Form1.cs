@@ -14,6 +14,11 @@ namespace LAB22
 {
     public partial class Form1 : Form
     {
+        public string _name;
+        public int _width;
+        public int _height;
+        public string _color;
+        
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +28,13 @@ namespace LAB22
             timer.Interval = 10;
             timer.Enabled = true;
             timer.Tick += new EventHandler(timer_tick);
+            _name = this.Name;
+            _width = this.Width;
+            _height = this.Height;
+            _color = this.BackColor.ToString();
+            Info info = new Info();
+            info.Start(_name, _width, _height, _color);
+            
         }
         private void timer_tick(object sender, EventArgs e)
         {

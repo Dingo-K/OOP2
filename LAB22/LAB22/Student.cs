@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace LAB22
 {
+
+     public interface Istudent
+    {
+        Istudent Clone();
+    }
     [Serializable]
-    public class Student
+    public class Student 
     {
         public string name;
         [Required(ErrorMessage = "Фамилия не установлена")]
@@ -26,6 +31,8 @@ namespace LAB22
         public string build;
         [Valid]
         public string flat;
+
+       
         public Student()
         {
 
@@ -49,15 +56,24 @@ namespace LAB22
         }
     }
     [Serializable]
-    public class Students
+    public class Students : Istudent
     {
         public List<Student> studentlist = new List<Student>();
+        public List<Student> studentlist1 = new List<Student>();
 
         public Students()
         {
 
         }
 
+        public Students(List<Student> students)
+        {
+            studentlist1= students;
+        }
+        public Istudent Clone()
+        {
+            return new Students(this.studentlist);
+        }
         
     }
 

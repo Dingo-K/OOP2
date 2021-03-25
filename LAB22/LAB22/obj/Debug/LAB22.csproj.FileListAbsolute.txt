@@ -12,3 +12,17 @@ D:\OOP\2Sem\LAB22\LAB22\obj\Debug\LAB22.Form2.resources
 D:\OOP\2Sem\LAB22\LAB22\obj\Debug\LAB22.Form3.resources
 D:\OOP\2Sem\LAB22\LAB22\bin\Debug\System.ComponentModel.Annotations.dll
 D:\OOP\2Sem\LAB22\LAB22\obj\Debug\LAB22.csproj.CopyComplete
+D:\ООП\OOP2\LAB22\LAB22\bin\Debug\LAB22.exe.config
+D:\ООП\OOP2\LAB22\LAB22\bin\Debug\LAB22.exe
+D:\ООП\OOP2\LAB22\LAB22\bin\Debug\LAB22.pdb
+D:\ООП\OOP2\LAB22\LAB22\bin\Debug\System.ComponentModel.Annotations.dll
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.csprojAssemblyReference.cache
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.Form1.resources
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.Form2.resources
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.Form3.resources
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.Properties.Resources.resources
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.csproj.GenerateResource.cache
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.csproj.CoreCompileInputs.cache
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.csproj.CopyComplete
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.exe
+D:\ООП\OOP2\LAB22\LAB22\obj\Debug\LAB22.pdb
