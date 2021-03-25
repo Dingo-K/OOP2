@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder.cs" />
+    <Compile Include="Faztory.cs" />
     <Compile Include="For4.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
